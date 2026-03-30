@@ -10,6 +10,7 @@ docker run \
 -e GITHUB_COPILOT_API_KEY_FILE="api-key.json" \
 -v "$(pwd)/github_copilot:/app/github_copilot" \
 -v "$(pwd)/config.yaml:/app/config.yaml" \
+-v "$(pwd)/custom_hooks.py:/app/custom_hooks.py" \
 -p 4000:4000 \
 ghcr.io/berriai/litellm:main-stable \
---config /app/config.yaml --detailed_debug
+--config /app/config.yaml --detailed_debug "$@"

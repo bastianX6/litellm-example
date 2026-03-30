@@ -1,6 +1,7 @@
 litellm_settings:
   drop_params: true
   set_verbose: true
+  callbacks: ["custom_hooks.proxy_handler_instance"]
 
 x-copilot-headers: &copilot_headers
   extra_headers:
@@ -74,6 +75,10 @@ model_list:
     litellm_params:
       model: github_copilot/claude-sonnet-4.5
       <<: *copilot_headers
+  - model_name: claude-sonnet-4.6
+    litellm_params:
+      model: github_copilot/claude-sonnet-4.6
+      <<: *copilot_headers
   - model_name: claude-opus-4.5
     litellm_params:
       model: github_copilot/claude-opus-4.5
@@ -98,5 +103,13 @@ model_list:
   - model_name: claude-haiku-4-5-20251001
     litellm_params:
       model: github_copilot/claude-haiku-4.5
+      <<: *copilot_headers
+  - model_name: claude-sonnet-4-6
+    litellm_params:
+      model: github_copilot/claude-sonnet-4.6
+      <<: *copilot_headers
+  - model_name: claude-opus-4-6
+    litellm_params:
+      model: github_copilot/claude-opus-4.6
       <<: *copilot_headers
 # End of Claude code models
